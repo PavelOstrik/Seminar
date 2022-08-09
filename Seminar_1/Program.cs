@@ -95,21 +95,22 @@
 // 4 -> "-4, -3, -2, -1, 0, 1, 2, 3, 4"
 // 2 -> " -2, -1, 0, 1, 2"
 
-int number = Convert.ToInt32(Console.ReadLine()); // число N
-//Мы должны проверить положительное ли число, и если нет, сделать его положительным
-if (number < 0)
-{
-    number = number * (-1); // второй вариант записи number = -number
-}
-//теперь нужно указать левую границу -N = N * (-1)
-int negativeNumber = number * (-1); // -N
-//[-N;N]
-while (negativeNumber <= number) // ввели 4, и идем от -4 пока не дойдём до 4
-{
-    System.Console.WriteLine(negativeNumber);
-    negativeNumber++; // инкремент увеличиваем на 1, можно также написать как negativeNumber=negativeNumber + 1
-    // negativeNumber--  negativeNumber=negativeNumber - 1  декримент
-}
+// int number = Convert.ToInt32(Console.ReadLine()); // число N
+// //Мы должны проверить положительное ли число, и если нет, сделать его положительным
+// if (number < 0)
+// {
+//     number = number * (-1); // второй вариант записи number = -number
+// }
+// //теперь нужно указать левую границу -N = N * (-1)
+// int negativeNumber = number * (-1); // -N
+// //[-N;N]
+// while (negativeNumber <= number) // ввели 4, и идем от -4 пока не дойдём до 4
+// {
+//     System.Console.WriteLine(negativeNumber);
+//     negativeNumber++; // инкремент увеличиваем на 1, можно также написать как
+// negativeNumber=negativeNumber + 1
+//     // negativeNumber--  negativeNumber=negativeNumber - 1  декримент
+// }
 
 // Результат вывода:
 // PS C:\Users\postr\OneDrive\Рабочий стол\Seminar\Seminar_1> dotnet run
