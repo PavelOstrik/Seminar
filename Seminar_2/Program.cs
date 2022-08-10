@@ -30,20 +30,23 @@
 //System.Console.WriteLine("Рандомное число " +number); Конкатенация - процесс сложения строк
 
 
-//Задача 11: Напишите программу, которая выводит случайное трёхзначное число и удаляет вторую
+// Задача 11: Напишите программу, которая выводит случайное трёхзначное число и удаляет вторую
 // цифру этого числа.
 // 456 -> 46
 // 782 -> 72
 // 918 -> 98
+
+
 int number = new Random().Next(100,1000); // [100,1000) это как [100,999]
 System.Console.WriteLine($"Рандомное число: {number}");
- 
+ //456, как получить 4 (456/100), как получить 6 (456%10)
 int firstDigit = number / 100; // "/" деление без остатка
 int thirdDigit = number % 10; // "%" остаток от деления на 10
 
 System.Console.WriteLine(firstDigit + "" + thirdDigit);
 
 //2ой вариант 
+//как получить число 46: 4 десятка(4*10), 6 единиц (6*1)
 int number = new Random().Next(100,1000); //[100;999]
 int result = (number / 100) * 10 + number % 10;
 Console.WriteLine($"Первая и третья цифра числа  от числа {number} = {result}");
@@ -72,7 +75,7 @@ else Console.WriteLine($"Не кратно, остаток: {firstNumber % secon
 
 
 
-// Задача 16: Напишите программу, которая принимает на вход число и проверяет,
+// Задача 14: Напишите программу, которая принимает на вход число и проверяет,
 // кратно ли оно одновременно 7 и 23.
 // 14 -> нет 
 // 46 -> нет 
@@ -93,4 +96,25 @@ int number = Convert.ToInt32(Console.ReadLine());
 if (number % 3 == 0 || number % 5 == 0) Console.WriteLine("Число кратно 3 или 5");
 else Console.WriteLine("Число НЕ кратно 3 или 5");
 
+Напишите программу, которая принимает на вход два числа и проверяет, 
+является ли одно число квадратом другого.
 
+int num1 = Convert.ToInt32(Console.ReadLine());
+int num2 = Convert.ToInt32(Console.ReadLine());
+
+//int min = Math.Min(num1, num2);
+int min = num1;
+int max = num2;
+
+if(num2 < num1) 
+{
+    min = num2;
+    max = num1;
+}
+int sqr = min * max;
+
+if(sqr == max)
+{
+    System.Console.WriteLine("Да");    
+}
+else System.Console.WriteLine("Нет");
