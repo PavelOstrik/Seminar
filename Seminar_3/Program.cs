@@ -58,7 +58,7 @@ double result = Math.Sqrt(Math.Pow((x2 - x1), 2) + Math.Pow((y2 - y1), 2));
 Console.WriteLine($"Расстояние между точками: {result}); 
 
 //Здесь мы обрезаем кол-во знаков после запятой
-Console.WriteLine($"Расстояние между точкми: {Math.Round(result,3)}");
+Console.WriteLine($"Расстояние между точакми: {Math.Round(result,3)}");
 // Math.Round(число, количество знаков после запятой)
 // Math.Round(result,3) - округляет переменную result до 3 знаков после запятой
 // в случае 5,09 -> напишет 5,1 (при условии (resalt,2))
