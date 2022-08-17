@@ -1,6 +1,6 @@
-﻿//1. Методы, которые возвращают какое-то значение (не Void)
-//2. Void
-// тип метода Имя (параметры)
+﻿1. Методы, которые возвращают какое-то значение (не Void)
+2. Void
+тип метода Имя (параметры)
 /*
 1. Методы, которые возвращают какое-то значение (не Void)
 int Calculate (int a, int b)
@@ -65,7 +65,7 @@ int GetCountNumbers(int num)
     while (number > 0)
     {
         count++;
-        number/=10; number = number / 10, мы делим без остатка пока number не равен нулю,
+        number/=10; number = number / 10; // мы делим без остатка пока number больше 0,
         //123/10=12 12/10= 1 1/10 = 0
     }
     return count;
@@ -103,6 +103,22 @@ Console.WriteLine($"Произведение чисел от 1 до {number} = {
 Задача 30: Напишите программу, которая выводит массив из 8 элементов,
 заполненный нулями и единицами в случайном порядке.
 [1,0,1,1,0,1,0,0]
+*/
+/*
+int[] GetBinaryArray(int size) //size - количество элементов
+{
+int[] result = new int[size]; // Массив, в котором size элементов (размер)
+// size = 2, result = [0,0]
+for (int i = 0; i < result.Length; i++) // result.Length = size
+{
+result[i] = new Random().Next(2); // [0;1]
+}
+return result;
+}
+
+int[] array = GetBinaryArray(8);
+
+Console.WriteLine($"Результат: [ {String.Join(", " ,array )} ]");
 */
 
 // https://serg40in.ru/reshaem-400-zadach-na-c/
