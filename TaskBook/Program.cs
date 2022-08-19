@@ -77,4 +77,300 @@ string surname = Console.ReadLine();
 // Объявите переменную с именем myPerson строкового типа и запишите в неё свое имя
 // на первой строке, а фамилию на второй строке.
 
-string myPerson = "Pavel\nOstrik";
+//string myPerson = "Pavel\nOstrik";
+
+
+//05. Ввод информации. Конвертация
+
+//Задача: По данному целому числу, найдите его квадрат.
+// Пример использования:
+// Выходные данные 1: Введите целое число
+// Входные данные  1: 5
+// Выходные данные 1: Квадрат числа = 25
+// System.Console.Write("Введите число: ");
+// int number = Convert.ToInt32(Console.ReadLine());
+// System.Console.WriteLine($"Квадрат числа {number} = {Math.Pow(number,2)}");
+
+// Задача: Написать программу для обмена значений двух построчно введенных
+// в консоль целых переменных, и вывода результата на одной строке.
+// Пример использования:
+// Выходные данные 1: Введите построчно два числа для перестановки
+// Входные данные  1: (10) (20)
+// Выходные данные 1: Значения после перестановки
+// Выходные данные 1: 20 10
+// System.Console.WriteLine("Введите построчно два числа дял перестановки:");
+// int a = Convert.ToInt32(Console.ReadLine());
+// int b = Convert.ToInt32(Console.ReadLine());
+// int temp = a;
+// a = b;
+// b = temp;
+// System.Console.WriteLine($"Значение после перестановки: {a}  {b}");
+
+//06. Операции с целыми числами
+
+// int num1 = 18;
+// int num2 = 8;
+// Console.WriteLine("первое число =  " + num1 + ", второе число = " + num2);
+// int result = num1 + num2;
+// Console.WriteLine("Сложение: \t\t"+ num1 + "+" + num2 + "=" + result);            // 26 
+// result = num1 * num2;
+// Console.WriteLine("Умножение: \t\t" + num1 + "*" + num2 + "=" + result);         // 144
+// result = num1 / num2;
+// Console.WriteLine("Деление нацело: \t" + num1 + "/" + num2 + "=" + result);      // 2
+// result = num1 % num2;
+// Console.WriteLine("Деление с остатком: \t" + num1 + "%" + num2 + "=" + result);  // 2 
+
+// Напишите программу, которая находит сумму и произведение трёх целых чисел,
+// построчно введённых с клавиатуры в консоль.
+// Пример использования:
+// Выходные данные 1: Введите построчно три числа
+// Входные данные  1: (1) (2) (3)
+// Выходные данные 1: Сумма = 6; Произведение = 6
+// System.Console.WriteLine("Введите три числа: ");
+// int numberOne = Convert.ToInt32(Console.ReadLine());
+// int numberSecond = Convert.ToInt32(Console.ReadLine());
+// int numberThird = Convert.ToInt32(Console.ReadLine());
+// int sum = numberOne + numberSecond + numberThird;
+// int pow = numberOne * numberSecond * numberThird;
+// System.Console.WriteLine("Сумма = " + sum  + ";" + " Произведение = " + pow);
+
+// Написать программу нахождения результата для следующего задания:
+// n школьников делят k яблок поровну, не делящийся остаток остается
+// в корзинке. Данные вводятся построчно. Программа должна вывести сколько
+// яблок достанется каждому школьнику.
+// Пример использования:
+// Выходные данные 1: Введите построчно два числа
+// Входные данные  1: (3) (7)
+// Выходные данные 1: 7 / 3 = 2
+
+// System.Console.Write("Введите количество школьников: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// System.Console.Write("Введите количество яблок: ");
+// int k = Convert.ToInt32(Console.ReadLine());
+// //System.Console.WriteLine($"{k / n} яблока достанется каждому школьнику");
+// Console.WriteLine(k + " / " + n + " = " + (k / n));
+
+// Написать программу нахождения результата для следующего задания:
+// n школьников делят k яблок поровну,
+// не делящийся остаток остается в корзинке.
+// Данные вводятся построчно. Программа должна вывести сколько яблок останется в корзинке?
+// Пример использования:
+// Выходные данные 1: Введите построчно два числа
+// Входные данные  1: (3) (7) 
+// Выходные данные 1: Остаток 7 / 3 = 1
+
+// System.Console.Write("Введите количество школьников: ");
+// int students = Convert.ToInt32(Console.ReadLine());
+// System.Console.Write("Введите количество яблок: ");
+// int apple = Convert.ToInt32(Console.ReadLine());
+// //System.Console.WriteLine($"{apple % students} яблока останется в корзине");
+// Console.WriteLine(apple + " / " + students + " = " + (apple % students));
+
+// Написать программу для нахождения результата из следующей задачи:
+// пирожок в столовой стоит a рублей и b копеек. Вывести в консоль сколько рублей
+// и копеек нужно заплатить за n пирожков. Данные вводятся с консоли построчно: a, b, n.
+// Пример использования:
+// Выходные данные 1: Введите целое число, обозначающие количество рублей
+// Входные данные  1: 5
+// Выходные данные 1: Введите целое число, обозначающие количество копеек
+// Входные данные  1: 50
+// Выходные данные 1: Введите нужное количество пирожков
+// Входные данные  1: 2
+// Выходные данные 1: 2 пирожков(ка) стоит 11 руб 0 коп
+
+// System.Console.Write("Введите целое число, обозначающие количество рублей: ");
+// int rubles = Convert.ToInt32(Console.ReadLine());
+// System.Console.Write("Введите целое число, обозначающие количество копеек: ");
+// int kopecks = Convert.ToInt32(Console.ReadLine());
+// System.Console.Write("Введите нужное количество пирожков: ");
+// int food = Convert.ToInt32(Console.ReadLine());
+// int cellFood = (rubles * 100 + kopecks) * food;
+// System.Console.WriteLine($"{food} пирожков стоят: {cellFood/100} руб {cellFood%100} коп");
+
+// Написать программу для вычисления введенного число x в 6 степени
+// при помощи трех операций умножения.
+// Пример использования:
+// Выходные данные 1: Введите целое число
+// Входные данные  1: 3
+// Выходные данные 1: 3 в шестой степени = 729
+
+// System.Console.Write("Введите целое число: ");
+// int number = Convert.ToInt32(Console.ReadLine());
+// int result = 1;
+// result = number * number;
+// result = result * result * result;
+// System.Console.WriteLine($"{number} в шестой степени = {result}");
+
+//Home_11. Дана сторона квадрата. Найти его периметр.
+// System.Console.Write("Введите длину стороны квадрата: ");
+// int a = Convert.ToInt32(Console.ReadLine());
+// int perimetr = 4 * a;
+// System.Console.WriteLine($"Периметр квадарата = {perimetr}");
+
+// Home_12. Дано с клавиатуры целое число x. Пользуясь только операцией умножения, получить:
+// а) x^4 за две операции; 16
+// б) x^6 за три операции; 64
+// в) x^7 за четыре операции; 128
+// г) x^8 за три операции;
+// д) x^9 за четыре операции;
+// е) x^10 за четыре операции;
+// ж) x^13 за пять операций;
+// з) x^15 за пять операций;
+// и) x^21 за шесть операций;
+// к) x^28 за шесть операций;
+// л) x^64 за шесть операций.
+//System.Console.Write("Введите целое число: ");
+//int x = Convert.ToInt32(Console.ReadLine());
+// а) x^4 за две операции; 16
+// x=x*x; x=x*x;
+// System.Console.WriteLine($"2 в 4 степени = {x}");
+//б) x^6 за три операции; 64
+// x=x*x; x=x*x*x;
+// System.Console.WriteLine($"2 в 6 степени = {x}");
+// в) x^7 за четыре операции; 128
+// int result = 1;
+// result = x * x * x;
+// result = result * result;
+// result = result * x;
+// System.Console.WriteLine($"{x} в 7 степени = {result}");
+// г) x^8 за три операции; 256
+// int result = 1;
+// result = x * x;
+// result = result * result;
+// result = result * result;
+// System.Console.WriteLine($"{x} в 8 степени = {result}");
+//д) x^9 за четыре операции; 512
+// int result = 1;
+// result = x * x;
+// result = result * result;
+// result = result * result;
+// result = result * x;
+// System.Console.WriteLine($"{x} в 9 степени = {result}");
+// е) x^10 за четыре операции; 1024
+// int result = 1;
+// int y = 1;
+// result = x * x;
+// y = result * result;
+// y = y * y;
+// result = result * y;
+// System.Console.WriteLine($"{x} в 10 степени = {result}");
+// ж) x^13 за пять операций; 8192
+// int result = 1;
+// result = x * x;
+// result = result * result * result;
+// result = result * result;
+// result = result * x;
+// System.Console.WriteLine($"{x} в 13 степени = {result}");
+// з) x^15 за пять операций; 32768
+// int result = 1;
+// int y = 1;
+// result = x * x * x;
+// y = result * result;
+// y = y * y;
+// result = result * y;
+// System.Console.WriteLine($"{x} в 15 степени = {result}");
+// и) x^21 за шесть операций; 2 097 152
+// int result = 1;
+// int y = 1;
+// int z = 1;
+// z = x * x * x; //8
+// result = z * z; //64
+// y = result * result; //4 096
+// y = result * z; //32 768
+// result = result * y;
+// System.Console.WriteLine($"{x} в 21 степени = {result}");
+// к) x^28 за шесть операций; 268 435 456
+// int result = 1;
+// int y = 1;
+// y = x * x; //4
+// result = y * y;  //16
+// y = result * result * result; //4096
+// y = y * y;
+// result = y * result;
+// System.Console.WriteLine($"{x} в 21 степени = {result}");
+// Home_12. Дано с клавиатуры целое число x. Пользуясь только операцией умножения, получить:
+// л) x^64 за шесть операций.
+// System.Console.Write("Введите целое число: ");
+// double x = Convert.ToDouble(Console.ReadLine());
+// double result = 1;
+// result = x * x;
+// result = result * result;
+// result = result * result;
+// result = result * result;
+// result = result * result;
+// result = result * result;
+// System.Console.WriteLine($"{x} в 64 степени = {result}");
+
+// Home_13. Составить программу обмена значениями трех переменных величин
+// а, b, c по следующей схеме:
+// а) b присвоить значение c, а присвоить значение b, с присвоить значение а;
+// б) b присвоить значение а, с присвоить значение b, а присвоить значение с.
+
+// System.Console.Write("Введите значение числа a: ");
+// int a = Convert.ToInt32(Console.ReadLine());
+// System.Console.Write("Введите значение числа b: ");
+// int b = Convert.ToInt32(Console.ReadLine());
+// System.Console.Write("Введите значение числа c: ");
+// int c = Convert.ToInt32(Console.ReadLine());
+// System.Console.WriteLine($"a = {a} b = {b} c = {c}");
+//а) b присвоить значение c, а присвоить значение b, с присвоить значение а
+// int temp1 = a;
+// a = b;
+// //int temp2 = b;
+// b = c;
+// c = temp1;
+// System.Console.WriteLine($"a = {a} b = {b} c = {c}");
+//б) b присвоить значение а, с присвоить значение b, а присвоить значение с.
+// int temp1 = a;
+// a = c;
+// c = b;
+// b = temp1;
+// System.Console.WriteLine($"a = {a} b = {b} c = {c}");
+
+//Home_14. Дана длина ребра куба. Найти объем куба и площадь его боковой поверхности.
+// v = a в 3 степени
+// s = 2 во 2 степени
+// System.Console.Write("Введите длину ребра куба: ");
+// int a = Convert.ToInt32(Console.ReadLine());
+// System.Console.WriteLine("Объем куба равен: " + a * a * a);
+// System.Console.WriteLine("Площадь боковой поверхности: " + a * a);
+
+// Home_15. Известна стоимость 1 кг конфет, печенья и яблок.
+// Найти стоимость всей покупки, если купили x кг конфет, у кг печенья и z кг яблок.
+// System.Console.Write("Введите стоимость 1кг конфет: ");
+// double priceCandies = Convert.ToDouble(Console.ReadLine());
+// System.Console.Write("Введите количество купленных конфет: ");
+// double сandies = Convert.ToDouble(Console.ReadLine());
+
+// System.Console.Write("Введите стоимость 1кг печенья: ");
+// double priceCookies = Convert.ToDouble(Console.ReadLine());
+// System.Console.Write("Введите количество купленных печенья: ");
+// double cookies = Convert.ToDouble(Console.ReadLine());
+
+// System.Console.Write("Введите стоимость 1кг яблок: ");
+// double priceApples = Convert.ToDouble(Console.ReadLine());
+// System.Console.Write("Введите количество купленных яблок: ");
+// double apples = Convert.ToDouble(Console.ReadLine());
+
+// System.Console.WriteLine("Стоимость всей покупки: " + (priceCandies * сandies + 
+// priceCookies * cookies + priceApples * apples));
+
+// Home_16. Даны два числа. Найти их сумму, разность, произведение,
+// а также частное от деления первого числа на второе.
+// System.Console.Write("Введите первое число: ");
+// double firstNumber = Convert.ToDouble(Console.ReadLine());
+
+// System.Console.Write("Введите второе число: ");
+// double secondNumber = Convert.ToDouble(Console.ReadLine());
+
+// System.Console.WriteLine("Сумма чисел " + firstNumber + " + " + secondNumber + " = " +
+// (firstNumber + secondNumber));
+// System.Console.WriteLine("Разность чисел " + firstNumber + " - " + secondNumber + " = " +
+// (firstNumber - secondNumber));
+// System.Console.WriteLine("Произведение чисел " + firstNumber + " * " + secondNumber + " = " +
+// (firstNumber * secondNumber));
+// System.Console.WriteLine("Частное от деления чисел " + firstNumber + " / " + secondNumber + " = " +
+// Math.Round((firstNumber / secondNumber),1));
+
+// Home_17. Пользователь вводит количество недель, месяцев, лет
+// и получает количество дней за это время. Считать, что в месяце 30 дней.
