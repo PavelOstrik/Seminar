@@ -44,17 +44,28 @@ System.Console.WriteLine($"Сумма элементов, стоящих на н
 Найдите разницу между максимальным и минимальным элементов массива.
 [3 7 22 2 78] -> 76
 */
+/*
 double[] array = new double[5];
 Random rand = new Random();  // Создать экземпляр генератора случайных чисел
 double size = array.Length;
-// double max = 0;
-// double min = 0;
 
 for (int i = 0; i < size; i++)
 {
     array[i] = Math.Round(rand.NextDouble()*100,2);    
 }
 System.Console.WriteLine($"[{String.Join(", ", array)}]");
+*/
+
+
+double [] array = new double[5];
+double size = array.Length;
+for (int i = 0; i < size; i++)
+{
+    array[i] = Math.Round(new Random().NextDouble() * 100,2);
+}
+System.Console.WriteLine($"[{String.Join(", ", array)}]");
+// diff = max - min
+
 
 double max = array[0];
 double min = array[0];
