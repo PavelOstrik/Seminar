@@ -52,18 +52,18 @@ int columns = Convert.ToInt32(Console.ReadLine());
 // Заполнение массива
 // Матрица - табличка - двумерный массив
 // m - строчки, n - столбцы
-int [,] GetArray(int m, int n)
+int[,] GetArray(int m, int n)
 {
-int [,] matrix = new int[m,n];
-for (int i = 0; i < matrix.GetLength(0); i++) // по строчкам
-{
-// i, j, m, k
-for (int j = 0; j < matrix.GetLength(1); j++) // по столбцам
-{
-matrix[i,j] = new Random().Next(11); // [0;10]
-}
-}
-return matrix;
+    int[,] matrix = new int[m, n];
+    for (int i = 0; i < matrix.GetLength(0); i++) // по строчкам
+    {
+        // i, j, m, k
+        for (int j = 0; j < matrix.GetLength(1); j++) // по столбцам
+        {
+            matrix[i, j] = new Random().Next(11); // [0;10]
+        }
+    }
+    return matrix;
 }
 int[,] resultMatrix = GetArray(rows, columns);
 PrintArray(resultMatrix);
@@ -72,14 +72,14 @@ PrintArray(resultMatrix);
 
 void PrintArray(int[,] inputMatrix)
 {
-for (int i = 0; i < inputMatrix.GetLength(0); i++)
-{
-for (int j = 0; j < inputMatrix.GetLength(1); j++)
-{
-Console.Write(inputMatrix[i, j] + "\t"); // "\t" - Tab
-}
-Console.WriteLine();
-}
+    for (int i = 0; i < inputMatrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < inputMatrix.GetLength(1); j++)
+        {
+            Console.Write(inputMatrix[i, j] + "\t"); // "\t" - Tab
+        }
+        Console.WriteLine();
+    }
 }
 */
 
@@ -268,22 +268,22 @@ int columns = Convert.ToInt32(Console.ReadLine());
 int[,] matrix = new int[rows, columns];
 for (int i = 0; i < matrix.GetLength(0); i++) // по строчкам
 {
-// i, j, m, k
-for (int j = 0; j < matrix.GetLength(1); j++) // по столбцам
-{
-matrix[i, j] = new Random().Next(11); // [0;10]
-Console.Write(matrix[i, j] + "\t");
-}
-Console.WriteLine();
+    // i, j, m, k
+    for (int j = 0; j < matrix.GetLength(1); j++) // по столбцам
+    {
+        matrix[i, j] = new Random().Next(11); // [0;10]
+        Console.Write(matrix[i, j] + "\t");
+    }
+    Console.WriteLine();
 }
 
 int sum = 0; // Элементы еще не суммировали
 for (int i = 0; i < matrix.GetLength(0); i++)
 {
-for (int j = 0; j < matrix.GetLength(1); j++)
-{
-if (i == j) sum += matrix[i,j]; // sum = sum + matrix[i,j]
-}
+    for (int j = 0; j < matrix.GetLength(1); j++)
+    {
+        if (i == j) sum += matrix[i, j]; // sum = sum + matrix[i,j]
+    }
 }
 
 Console.WriteLine($"Сумма элементов главной диагонали: {sum} ");
