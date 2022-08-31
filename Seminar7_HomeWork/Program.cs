@@ -6,7 +6,7 @@ m = 3, n = 4.
 1 -3,3 8 -9,9
 8 7,8 -7,1 9
 */
-/*
+
 void FillArray (double[,] matrix)
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
@@ -19,16 +19,15 @@ void FillArray (double[,] matrix)
 }
 
 void PrintArray (double[,] matrix)
-{
-    Console.Write("[\t");    
+{        
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
             Console.Write(matrix[i, j] + "\t");
         }
-    }
-    Console.Write("]");
+        System.Console.WriteLine();
+    }    
 }
 
 Console.Write("Введите количество строк: ");
@@ -40,7 +39,7 @@ int columns = Convert.ToInt32(Console.ReadLine());
 double[,] result = new double[rows, columns];
 FillArray(result);
 PrintArray(result);
-*/
+
 
 /*
 Задача 50. Напишите программу, которая на вход принимает позиции элемента
@@ -69,9 +68,11 @@ for (int i = 0; i < matrix.GetLength(0); i++)
 }
 
 if (rows <= matrix.GetLength(0) && columns <= matrix.GetLength(1))
-    Console.WriteLine(matrix[rows, columns]);
-else
-    Console.WriteLine(rows + ", " + columns + " числа на такой позиции в массиве нет");
+    {
+        Console.WriteLine(matrix[rows, columns]);        
+    }
+    else
+        Console.WriteLine(rows + ", " + columns + " числа на такой позиции в массиве нет");
 // Не разобрался, почему при превышении размера строки терминал выдаёт ошибку, что
 // мы вышли за размер диапазона, а при первышении столбца нет и код работает
 */
@@ -85,7 +86,7 @@ else
 8 4 2 4
 Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 */
-
+/*
 int[,] matrix = new int[3, 4];
 
 for (int i = 0; i < matrix.GetLength(0); i++)
@@ -108,5 +109,23 @@ for (int j = 0; j < matrix.GetLength(1); j++)
     }
     Console.Write($"{Math.Round(sum / matrix.GetLength(0), 1)} ");
 }
+*/
+/*
+Вариант записи преподавателя:
+
+int[] MeanElem(int[,] array)
+{
+    int col = array.GetLength(1);
+   int[] result  = new int[col];
+    for (int j = 0; j < array.GetLength(1); j++)
+    {
+        for (int i = 0; i < array.GetLength(0); i++)
+        {
+            result[col] += array[i, j];
+        }
+    }
+    return result;
+}
+*/
 
 
