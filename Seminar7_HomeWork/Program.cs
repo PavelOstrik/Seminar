@@ -7,38 +7,41 @@ m = 3, n = 4.
 8 7,8 -7,1 9
 */
 
-void FillArray (double[,] matrix)
+void FillArray(double[,] matrix)
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
             matrix[i, j] = Math.Round((new Random().NextDouble() * 2 - 1) * 10, 1);
+            // * 2 -1 получаем отрицательный диапазон, умножаем на 2 чтобы значения были
+            // как отрицательные так и положительные, вычитаем единицу, чтобы были 
+            // отрицательные значения
         }
     }
 }
-
-void PrintArray (double[,] matrix)
-{        
-    for (int i = 0; i < matrix.GetLength(0); i++)
+    void PrintArray(double[,] matrix)
     {
-        for (int j = 0; j < matrix.GetLength(1); j++)
+        for (int i = 0; i < matrix.GetLength(0); i++)
         {
-            Console.Write(matrix[i, j] + "\t");
+            for (int j = 0; j < matrix.GetLength(1); j++)
+            {
+                Console.Write(matrix[i, j] + "\t");
+            }
+            System.Console.WriteLine();
         }
-        System.Console.WriteLine();
-    }    
-}
+    }
+    
 
-Console.Write("Введите количество строк: ");
-int rows = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Введите количество строк: ");
+    int rows = Convert.ToInt32(Console.ReadLine());
 
-Console.Write("Введите количество столбцов: ");
-int columns = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Введите количество столбцов: ");
+    int columns = Convert.ToInt32(Console.ReadLine());
 
-double[,] result = new double[rows, columns];
-FillArray(result);
-PrintArray(result);
+    double[,] result = new double[rows, columns];
+    FillArray(result);
+    PrintArray(result);
 
 
 /*

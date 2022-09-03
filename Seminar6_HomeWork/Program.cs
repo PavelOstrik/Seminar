@@ -67,7 +67,7 @@ while (number > 0)
 {    
     remains = number % 2;
     number = number / 2;
-    result = remains.ToString() + result;
+    result = remains.ToString() + result; // Решение подсмотрел в инете) Сам не догадался
 }
 System.Console.WriteLine(result);
 */

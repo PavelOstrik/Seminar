@@ -130,12 +130,51 @@ void PrintArray(int[,] matrix)
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
+        Console.Write("[\t");
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
             System.Console.Write(matrix[i, j] + "\t");
         }
-        System.Console.WriteLine();
+        Console.Write("]");
+        Console.WriteLine();
+        
     }
+}
+
+//Конвертируем двумерный массив в одномерный
+void ConvertMatrixToArray(int[,] matrix, int[] array)
+{
+    int k = 0;
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            array[k] = matrix[i, j];
+            k++;
+        }
+    }
+}
+
+//Еще один способ конвертации:
+// for (int i = 0; i < arrayTwo.GetLength(0); i++)
+// {
+//     for (int j = 0; j < arrayTwo.GetLength(1); j++)
+//     {
+//         arrayOne[i * columns + j] = arrayTwo[i, j];
+//         //Console.Write(arrayOne[i*columns + j] + ",\t");        
+//     }
+// }
+
+
+void PrintArrayOne(int[] matrix)
+{
+    int count = matrix.Length;
+    Console.Write("[ ");
+    for (int i = 0; i < count; i++)
+    {
+        Console.Write($"{matrix[i]}, ");
+    }
+    Console.Write(" ]");
 }
 
 void PrintVocabulary(int[] matrix)
@@ -146,11 +185,10 @@ void PrintVocabulary(int[] matrix)
     {
         if (temp != matrix[i])
         {
-            System.Console.WriteLine($"Элемент {temp} встречается {count} раз");
+            Console.WriteLine($"Элемент {temp} встречается {count} раз");
             count = 1;
             temp = matrix[i];
         }
-
         else count++;
     }
     Console.WriteLine($"Элемент {temp} встречается {count} раз");
@@ -166,27 +204,17 @@ int[,] arrayTwo = new int[rows, columns];
 
 FillArray(arrayTwo);
 PrintArray(arrayTwo);
+Console.WriteLine();
 
 int[] arrayOne = new int[rows * columns];
 
-for (int i = 0; i < arrayTwo.GetLength(0); i++)
-{
-    for (int j = 0; j < arrayTwo.GetLength(1); j++)
-    {
-        arrayOne[i * columns + j] = arrayTwo[i, j];
-        //Console.Write(arrayOne[i*columns + j] + ",\t");        
-    }
-}
+ConvertMatrixToArray(arrayTwo, arrayOne);
+PrintArrayOne(arrayOne);
+Console.WriteLine();
 
 Array.Sort(arrayOne);
-
-for (int i = 0; i < arrayTwo.GetLength(0); i++)
-{
-    for (int j = 0; j < arrayTwo.GetLength(1); j++)
-    {
-        Console.Write(arrayOne[i * columns + j] + ",\t");
-    }
-}
+PrintArrayOne(arrayOne);
+Console.WriteLine();
 
 System.Console.WriteLine();
 PrintVocabulary(arrayOne);
@@ -198,7 +226,8 @@ PrintVocabulary(arrayOne);
 пересечении которых расположен наименьший элемент
 массива.
 */
-
+/*
+1 способ решения
 void FillArray(int[,] matrix)
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
@@ -214,47 +243,72 @@ void PrintArray(int[,] matrix)
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
+        Console.Write("[\t");
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            System.Console.Write(matrix[i, j] + "\t");
+            Console.Write(matrix[i, j] + "\t");
         }
-        System.Console.WriteLine();
+        Console.Write("]");
+        Console.WriteLine();
     }
 }
 
-void DeleteMinNumberArray(int[,] array)
+static (int row, int col) FindMin(int[,] matrix)
+// Кортеж
+// Кортеж представляет набор значений, заключенных в круглые скобки:
+// В дальнейшем мы можем обращаться к каждому из этих значений через поля с названиями:
+// Item[порядковый_номер_поля_в_кортеже]
+// var tuple = (5, 10);
+// var tuple = (5, 10);
+// Console.WriteLine(tuple.Item1); // 5
+// Console.WriteLine(tuple.Item2); // 10
+// tuple.Item1 += 26;
+// Console.WriteLine(tuple.Item1); // 31
 {
-int min = array[0, 0];
-int row = 0;
-int column = 0;
-for (int i = 0; i < array.GetLength(0); i++)
-{
-    for (int j = 0; j < array.GetLength(1); j++)
+    int rowsCount = matrix.GetLength(0);
+    int columnsCount = matrix.GetLength(1);
+
+    int minValue = matrix[0, 0];
+    int rowMin = 0;
+    int columnMin = 0;
+
+    for (int i = 0; i < rowsCount; i++)
     {
-        if (min > array[i, j])
+        for (int j = 0; j < columnsCount; j++)
         {
-            min = array[i, j];
-            row = i;
-            column = j;
+            if (minValue > matrix[i, j])
+            {
+                minValue = matrix[i, j];
+                rowMin = i;
+                columnMin = j;
+            }
         }
     }
+    Console.WriteLine($"Минимальный элемент {minValue} имеет адрес {rowMin}, {columnMin}");
+    System.Console.WriteLine();
+    return (rowMin, columnMin);
 }
-Console.WriteLine($"Минимальный элемент {min} имеет адрес {row}, {column}");
-System.Console.WriteLine();
 
-for (int i = 0; i < array.GetLength(0); i++)
+static int[,] RemoveMinCrossover(int[,] matrix)
 {
-    for (int j = 0; j < array.GetLength(1); j++)
+    (int rowMin, int columnMin) = FindMin(matrix);
+
+    int rowsCount = matrix.GetLength(0);
+    int columnsCount = matrix.GetLength(1);
+    int[,] result = new int[rowsCount - 1, columnsCount - 1];
+
+    for (int row = 0; row < rowsCount; row++)
     {
-        if (i == row || j == column)
+        for (int col = 0; col < columnsCount; col++)
         {
-            
-        }             
-        else
-        Console.Write(array[i,j] + "\t");
-    }    
-    Console.WriteLine();
-}
+            if (row == rowMin || col == columnMin)
+                continue;
+            int newRow = row < rowMin ? row : row - 1;
+            int newCol = col < columnMin ? col : col - 1;
+            result[newRow, newCol] = matrix[row, col];
+        }
+    }
+    return result;
 }
 
 
@@ -267,6 +321,53 @@ int columns = Convert.ToInt32(Console.ReadLine());
 int[,] array = new int[rows, columns];
 FillArray(array);
 PrintArray(array);
-System.Console.WriteLine();
-DeleteMinNumberArray(array);
 
+System.Console.WriteLine();
+
+int[,] NewArray = RemoveMinCrossover(array);
+
+PrintArray(NewArray);
+*/
+
+//Способ Михаила
+// int.MaxValue - максимальное число, больше которого в integer не помещается,
+// при поиске минимального значения задавать минимальный элемент нужно всегда так
+// int minElement = int.MaxValue;
+/*
+int rows = 3;
+int columns = 3;
+int[,] matrix = new int[rows, columns];
+int minElement = int.MaxValue;
+int minElementRow = 0; // Строчка с минимальным элементом
+int minElementColumn = 0;// Столбец с минимальным элементом
+for (int i = 0; i < matrix.GetLength(0); i++) // matrix.GetLength(0) = rows
+{
+for (int j = 0; j < columns; j++) // matrix.GetLength(1) = columns
+{
+matrix[i, j] = new Random().Next(11); // [0;10]
+Console.Write(matrix[i, j] + "\t"); // Tab
+if (minElement > matrix[i, j]) // 5 > 0 , min = 0
+{
+minElement = matrix[i, j];
+minElementRow = i;
+minElementColumn = j;
+}
+}
+Console.WriteLine();
+}
+Console.WriteLine($"Min = {minElement}, row: {minElementRow}, column: {minElementColumn} ");
+for (int i = 0; i < matrix.GetLength(0); i++)
+{
+if (minElementRow != i)
+{
+for (int j = 0; j < matrix.GetLength(1); j++)
+{
+if (minElementColumn != j)
+{
+Console.Write(matrix[i, j] + "\t");
+}
+}
+Console.WriteLine();
+}
+}
+*/
