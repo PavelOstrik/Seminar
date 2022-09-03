@@ -113,34 +113,34 @@ int[,] array = new int[rows, columns];
 FillArray(array);
 PrintArray(array);
 
-int sumLineOne = 0;
+int sumFirstRow = 0;
 for (int i = 0; i < array.GetLength(0); i++)
 {
     for (int j = 0; j < array.GetLength(1); j++)
     {
-        sumLineOne += array[i, j];
+        sumFirstRow += array[i, j];
     }
     break;
 }
 
-int sumLine = 0;
-int minSumLine = 0;
+int sumRow = 0;
+int minSumRow = 0;
 for (int i = 0; i < array.GetLength(0); i++)
 {
     for (int j = 0; j < array.GetLength(1); j++)
     {
-        sumLine += array[i, j];
+        sumRow += array[i, j];
     }
-    if (sumLineOne > sumLine)
+    if (sumFirstRow > sumRow)
     {
-        sumLineOne = sumLine;
-        minSumLine = i;
+        sumFirstRow = sumRow;
+        minSumRow = i;
     }
-    sumLine = 0;
+    sumRow = 0;
 }
 
 Console.WriteLine
-($"Строка с наименьшой суммой элементов ({sumLineOne}): {minSumLine + 1} строка");
+($"Строка с наименьшой суммой элементов ({sumFirstRow}): {minSumRow + 1} строка");
 */
 
 /*
@@ -234,7 +234,7 @@ PrintArray(newMatrix);
 26(1,0,1) 55(1,1,1)
 */
 
-
+/*
 Console.Write("Введите количество строк: ");
 int rows = Convert.ToInt32(Console.ReadLine());
 
@@ -294,7 +294,7 @@ else
 {
     Console.WriteLine("Вы вышли за диапазон возможных значений, уменьшите размер матрицы");
 }
-
+*/
 
 /*
 Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
