@@ -129,3 +129,4 @@ return (number * Power(number, power - 1));
 
 Console.WriteLine($"Число {number} в степень {degree} = {Power(number,degree)}");
 */
+
