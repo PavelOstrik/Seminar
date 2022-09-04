@@ -55,8 +55,8 @@ Console.WriteLine("Введите два неотрицательных числ
 int m = Convert.ToInt32(Console.ReadLine());
 int n = Convert.ToInt32(Console.ReadLine());
 
-if (n < 0 && m < 0) return;
-if (n < 0 && m < 0) Console.WriteLine("Введите неотрицательные числа");
+if (n < 0 || m < 0) return;
+if (n < 0 || m < 0) Console.WriteLine("Введите неотрицательные числа");
 
 int Akkerman(int m, int n)
 {
