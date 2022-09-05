@@ -305,4 +305,56 @@ else
 10 09 08 07
 */
 
-// Пока не одолел
+void PrintArray(int[,] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        Console.Write("[\t");
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            Console.Write(matrix[i, j] + "\t");
+        }
+        Console.Write("]");
+        Console.WriteLine();
+    }
+}
+
+int[,] array = new int[4, 4];
+
+int rowsSize = array.GetLength(0);
+int colSize = array.GetLength(1);
+
+int count = 1;
+
+for (int j = 0; j < colSize; j++) // 1 2 3 4
+{
+    array[0, j] = count++;
+}
+
+for (int i = 1; i < rowsSize; i++) // 5 6 7
+{
+    array[i, colSize - 1] = count++;
+}
+
+for (int j = colSize - 2; j >= 0; j--) // 8 9 10
+{
+    array[rowsSize - 1, j] = count++;
+}
+
+for (int i = rowsSize - 2; i > 0; i--) // 11 12
+{
+    array[i, 0] = count++;
+}
+
+for (int j = 1; j < colSize - 1; j++) // 13 14
+{
+    array[1, j] = count++;
+}
+
+for (int j = colSize - 2; j > 0; j--) // 15 16
+{
+    array[rowsSize - 2, j] = count++;
+}
+
+PrintArray(array);
+

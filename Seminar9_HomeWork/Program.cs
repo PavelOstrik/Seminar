@@ -50,7 +50,7 @@ Console.Write($"Сумма натуральных элементов в пром
 Даны два неотрицательных числа m и n.
 m = 2, n = 3 -> A(m,n) = 9
 */
-/*
+
 Console.WriteLine("Введите два неотрицательных числа: ");
 int m = Convert.ToInt32(Console.ReadLine());
 int n = Convert.ToInt32(Console.ReadLine());
@@ -65,5 +65,5 @@ int Akkerman(int m, int n)
     return Akkerman(m - 1, Akkerman(m, n - 1));
 }
 Console.WriteLine($"Функция Аккермана для чисел {m} и {n} = {Akkerman(m, n)}");
-*/
+
 
